@@ -47,7 +47,9 @@ while the Debian init script is added to:
 
 ## Extensions
 
-### Note: The configure string in `build.sh` is different than the original repo which can be found [here](https://github.com/kasparsd/php-7-debian/blob/master/build.sh). It is up to your requirements to add/remove PHP modules therefore you should review (and edit if needed) the configure string accordingly.
+### Note: 
+
+The configure string in `build.sh` is different than the original repo which can be found [here](https://github.com/kasparsd/php-7-debian/blob/master/build.sh). It is up to your requirements to add/remove PHP modules therefore you should review (and edit if needed) the configure string accordingly.
 
 Note that most of the third-party PHP extensions are [not yet compatible with PHP 7](https://github.com/gophp7/gophp7-ext/wiki/extensions-catalog) and [GoPHP7-ext](http://gophp7.org/) (also on [GitHub](https://github.com/gophp7/gophp7-ext)) is a project to help do that. Here is a list of PHP modules that are enabled by default in this build:
 
