@@ -20,7 +20,8 @@ sudo apt-get install -y \
     libpng-dev \
     libpspell-dev \
     libreadline-dev \
-    libpq-dev
+    libpq-dev \
+    libxslt1-dev
 
 sudo mkdir /usr/local/php7
 
