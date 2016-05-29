@@ -1,10 +1,10 @@
-# Install PHP 7 & PostgreSQL (PDO) on Debian
+# Install PHP 7 on Debian
 
 These are a set of bash scripts for building and running PHP 7 (CLI and FPM) on Debian based Linux distributions:
 
 - `build.sh` installs the necessary build dependencies and the latest development version of PHP with CLI and FPM server APIs (SAPI) from the latest PHP 7 branch of https://github.com/php/php-src
  
-- `install.sh` sets up PHP-FPM by moving configuration files into their correct locations in `/usr/local/php7` and enables the `php7-fpm` service and adds it to the startup sequence.
+- `install.sh` sets up PHP-FPM by moving configuration files into their correct locations in `/usr/local/php7` and enables the `php7-fpm` service, adds it to the startup sequence and sets up `/ext/pdo_pgsql` and `/ext/pgsql`.
 
 Please note that these are very simple scripts that don't implement error checking or process validation.
 
