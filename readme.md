@@ -1,4 +1,4 @@
-# Install PHP 7 on Debian/Ubuntu
+# Install PHP 7 & PostgreSQL (PDO) on Debian
 
 These are a set of bash scripts for building and running PHP 7 (CLI and FPM) on Debian based Linux distributions:
 
@@ -11,7 +11,7 @@ Please note that these are very simple scripts that don't implement error checki
 
 ## Usage
 
-	$ git clone https://github.com/kasparsd/php-7-debian.git
+	$ git clone https://github.com/ekinhbayar/php-7-debian.git
 	$ cd php-7-debian
 	$ ./build.sh
 	$ sudo ./install.sh
@@ -47,6 +47,8 @@ while the Debian init script is added to:
 
 ## Extensions
 
+### Note: The configure string in `build.sh` is different than the original repo which can be found [here](https://github.com/kasparsd/php-7-debian/blob/master/build.sh). It is up to your requirements to add/remove PHP modules therefore you should review (and edit if needed) the configure string accordingly.
+
 Note that most of the third-party PHP extensions are [not yet compatible with PHP 7](https://github.com/gophp7/gophp7-ext/wiki/extensions-catalog) and [GoPHP7-ext](http://gophp7.org/) (also on [GitHub](https://github.com/gophp7/gophp7-ext)) is a project to help do that. Here is a list of PHP modules that are enabled by default in this build:
 
 	$ /usr/local/php7/bin/php -m
@@ -73,7 +75,6 @@ Note that most of the third-party PHP extensions are [not yet compatible with PH
 	libxml
 	mbstring
 	mcrypt
-	mhash
 	mysqli
 	mysqlnd
 	openssl
@@ -81,7 +82,9 @@ Note that most of the third-party PHP extensions are [not yet compatible with PH
 	pcre
 	PDO
 	pdo_mysql
+	pdo_pgsql
 	pdo_sqlite
+	pgsql
 	Phar
 	posix
 	pspell
@@ -103,6 +106,7 @@ Note that most of the third-party PHP extensions are [not yet compatible with PH
 	xml
 	xmlreader
 	xmlwriter
+	xsl
 	Zend OPcache
 	zip
 	zlib
@@ -138,5 +142,5 @@ and then append `extension=memcached.so` to `/usr/local/php7/etc/conf.d/modules.
 
 ## Credits
 
-- Created by [Kaspars Dambis](http://kaspars.net)
+- Original repo is created by [Kaspars Dambis](http://kaspars.net) and is [here](https://github.com/kasparsd/php-7-debian)
 - Based on [`php7.sh`](https://gist.github.com/tvlooy/953a7c0658e70b573ab4) by [Tom Van Looy](http://www.intracto.com/nl/blog/running-symfony2-on-php7) 
