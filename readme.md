@@ -2,12 +2,21 @@
 
 These are a set of bash scripts for building and running PHP 7 (CLI and FPM) on Debian based Linux distributions:
 
-- `build.sh` installs the necessary build dependencies and the latest development version of PHP with CLI and FPM server APIs (SAPI) from the latest PHP 7 branch of https://github.com/php/php-src
+- `build.sh` :
+    1. Installs the necessary build dependencies and the latest development version of PHP with CLI and FPM server APIs (SAPI) from the latest PHP 7 branch of https://github.com/php/php-src
  
-- `install.sh` sets up PHP-FPM by moving configuration files into their correct locations in `/usr/local/php7` and enables the `php7-fpm` service, adds it to the startup sequence and sets up `/ext/pdo_pgsql` and `/ext/pgsql`.
+- `install.sh` :
+    1. Sets up PHP-FPM by moving configuration files into their correct locations in `/usr/local/php7` 
+    2. Enables the `php7-fpm` service, adds it to the startup sequence 
+    3. Sets up `/ext/pdo_pgsql`, `/ext/pgsql`, `pthreads`, `apcu`
+
+#### Note: 
 
 Please note that these are very simple scripts that don't implement error checking or process validation.
 
+The configure string in `build.sh` is different than the file on original repo that is located [here](https://github.com/kasparsd/php-7-debian/blob/master/build.sh). It is up to your requirements to add/remove PHP modules therefore you should review (and edit if needed) the configure string accordingly. In case you do not want to install any of `/ext/pdo_pgsql`, `/ext/pgsql`, `pthreads`, `apcu` visit `install.sh` and comment out related parts or check out the original [repo](https://github.com/kasparsd/php-7-debian).
+
+---
 
 ## Usage
 
@@ -47,16 +56,13 @@ while the Debian init script is added to:
 
 ## Extensions
 
-#### Note: 
+Note that most of the third-party PHP extensions are [not yet compatible with PHP 7](https://github.com/gophp7/gophp7-ext/wiki/extensions-catalog) and [GoPHP7-ext](http://gophp7.org/) (also on [GitHub](https://github.com/gophp7/gophp7-ext)) is a project to help do that. 
 
-The configure string in `build.sh` is different than the original repo which can be found [here](https://github.com/kasparsd/php-7-debian/blob/master/build.sh). It is up to your requirements to add/remove PHP modules therefore you should review (and edit if needed) the configure string accordingly.
-
----
-
-Note that most of the third-party PHP extensions are [not yet compatible with PHP 7](https://github.com/gophp7/gophp7-ext/wiki/extensions-catalog) and [GoPHP7-ext](http://gophp7.org/) (also on [GitHub](https://github.com/gophp7/gophp7-ext)) is a project to help do that. Here is a list of PHP modules that are enabled by default in this build:
+Here is a list of PHP modules that are enabled by default in this (fork) build:
 
 	$ /usr/local/php7/bin/php -m
 	[PHP Modules]
+	apcu
 	bcmath
 	bz2
 	calendar
@@ -92,6 +98,7 @@ Note that most of the third-party PHP extensions are [not yet compatible with PH
 	Phar
 	posix
 	pspell
+	pthreads
 	readline
 	Reflection
 	session
