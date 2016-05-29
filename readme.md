@@ -8,7 +8,7 @@ These are a set of bash scripts for building and running PHP 7 (CLI and FPM) on 
 - `install.sh` :
     1. Sets up PHP-FPM by moving configuration files into their correct locations in `/usr/local/php7` 
     2. Enables the `php7-fpm` service, adds it to the startup sequence 
-    3. Sets up `/ext/pdo_pgsql`, `/ext/pgsql`, `pthreads`, `apcu`
+    3. Installs `/ext/pdo_pgsql`, `/ext/pgsql`, `pthreads`, `apcu`
 
 #### Note: 
 
