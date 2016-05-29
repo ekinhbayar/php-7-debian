@@ -75,26 +75,3 @@ CONFIGURE_STRING="--prefix=/usr/local/php7 \
 
 make
 sudo make install
-# PHP INSTALLED
-
-# START POSTGRESQL (PDO)
-# check first if you have it via:
-# /usr/local/php7/bin/php -m | grep pgsql
-
-cd ext/pdo_pgsql
-./configure --with-pdo-pgsql=/usr/local --with-php-config=/usr/local/php7/bin/php-config
-make
-sudo make install
-
-sudo echo "extension=pdo_pgsql.so" >> /usr/local/php7/lib/php.ini
-
-cd ../pgsql
-./configure --with-pgsql=/usr/local --with-php-config=/usr/local/php7/bin/php-config
-make
-sudo make install
-
-sudo echo "extension=pgsql.so" >> /usr/local/php7/lib/php.ini
-
-# /usr/local/php7/bin/php -m | grep pgsql should now print:
-# $ pdo_pgsql
-# $ pgsql
