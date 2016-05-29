@@ -24,6 +24,7 @@ update-rc.d php7-fpm defaults
 # /usr/local/php7/bin/php -m | grep pgsql
 
 cd php-src/ext/pdo_pgsql
+/usr/local/php7/bin/phpize
 ./configure --with-pdo-pgsql=/usr/local --with-php-config=/usr/local/php7/bin/php-config
 make
 sudo make install
@@ -31,6 +32,7 @@ sudo make install
 sudo echo "extension=pdo_pgsql.so" >> /usr/local/php7/lib/php.ini
 
 cd ../pgsql
+/usr/local/php7/bin/phpize
 ./configure --with-pgsql=/usr/local --with-php-config=/usr/local/php7/bin/php-config
 make
 sudo make install
