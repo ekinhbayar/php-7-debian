@@ -19,7 +19,7 @@ cp conf/php7-fpm.init /etc/init.d/php7-fpm
 chmod +x /etc/init.d/php7-fpm
 update-rc.d php7-fpm defaults
 
-# START POSTGRESQL (PDO) INSTALLATION
+### INSTALL POSTGRESQL (PDO)
 # you can check if you have it already via:
 # /usr/local/php7/bin/php -m | grep pgsql
 
@@ -42,6 +42,37 @@ sudo echo "extension=pgsql.so" >> /usr/local/php7/lib/php.ini
 # /usr/local/php7/bin/php -m | grep pgsql should now print:
 # $ pdo_pgsql
 # $ pgsql
+
+### INSTALL PTHREADS
+
+PTHREADS_VERSION=3.1.6
+
+wget https://pecl.php.net/get/pthreads-$PTHREADS_VERSION.tgz
+tar xzf pthreads-$PTHREADS_VERSION.tgz
+cd pthreads-$PTHREADS_VERSION
+/usr/local/php7/bin/phpize
+./configure --with-php-config=/usr/local/php7/bin/php-config
+make
+sudo make install
+cd $BASEDIR/../
+rm -rf pthreads-$PTHREADS_VERSION/
+
+### INSTALL APCu
+
+APCU_VERSION=5.1.3
+
+wget https://pecl.php.net/get/apcu-$APCU_VERSION.tgz
+tar xzf apcu-$APCU_VERSION.tgz
+cd apcu-$APCU_VERSION
+/usr/local/php7/bin/phpize
+./configure --with-php-config=/usr/local/php7/bin/php-config
+make
+sudo make install
+cd $BASEDIR/../
+rm -rf apcu-$APCU_VERSION/
+
+rm -rf install
+rm -rf package.xml
 
 # Create symlink to php7
 ln -s /usr/local/php7/bin/php /usr/local/bin/php7
