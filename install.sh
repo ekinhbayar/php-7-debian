@@ -43,6 +43,8 @@ sudo echo "extension=pgsql.so" >> /usr/local/php7/lib/php.ini
 # $ pdo_pgsql
 # $ pgsql
 
+cd ../
+
 ### INSTALL PTHREADS
 
 PTHREADS_VERSION=3.1.6
