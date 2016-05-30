@@ -10,13 +10,15 @@ These are a set of bash scripts for building and running PHP 7 (CLI and FPM) on 
     2. Enables the `php7-fpm` service, adds it to the startup sequence 
     3. Installs `/ext/pdo_pgsql`, `/ext/pgsql`, `pthreads`, `apcu`
 
+--
+
 #### Note: 
 
 Please note that these are very simple scripts that don't implement error checking or process validation.
 
 The configure string in `build.sh` is different than the file on original repo that is located [here](https://github.com/kasparsd/php-7-debian/blob/master/build.sh). It is up to your requirements to add/remove PHP modules therefore you should review (and edit if needed) the configure string accordingly. In case you do not want to install any of `/ext/pdo_pgsql`, `/ext/pgsql`, `pthreads`, `apcu` visit `install.sh` and comment out related parts or check out the original [repo](https://github.com/kasparsd/php-7-debian).
 
----
+--
 
 ## Usage
 
@@ -153,5 +155,5 @@ and then append `extension=memcached.so` to `/usr/local/php7/etc/conf.d/modules.
 
 ## Credits
 
-- Original repo is created by [Kaspars Dambis](http://kaspars.net) and is [here](https://github.com/kasparsd/php-7-debian)
+- Original [repo](https://github.com/kasparsd/php-7-debian) created by [Kaspars Dambis](http://kaspars.net)
 - Based on [`php7.sh`](https://gist.github.com/tvlooy/953a7c0658e70b573ab4) by [Tom Van Looy](http://www.intracto.com/nl/blog/running-symfony2-on-php7) 
