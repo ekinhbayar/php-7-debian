@@ -38,7 +38,7 @@ while the FPM socket is available at
 and PHP CLI:
 	
 	$ /usr/local/php7/bin/php -v
-	PHP 7.0.7 (cli) (built: May 29 2016 04:53:21) ( NTS )
+	PHP 7.0.7 (cli) (built: May 29 2016 04:53:21) ( ZTS DEBUG )
 	Copyright (c) 1997-2016 The PHP Group
 	Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
     	    with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
