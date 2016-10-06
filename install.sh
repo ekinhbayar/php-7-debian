@@ -61,7 +61,7 @@ rm -rf pthreads-$PTHREADS_VERSION/
 
 ### INSTALL APCu
 
-APCU_VERSION=5.1.4
+APCU_VERSION=5.1.6
 
 wget https://pecl.php.net/get/apcu-$APCU_VERSION.tgz
 tar xzf apcu-$APCU_VERSION.tgz
